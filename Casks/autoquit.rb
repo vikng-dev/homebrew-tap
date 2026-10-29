@@ -2,10 +2,10 @@ cask "autoquit" do
   version "1.0.3"
   sha256 "10e6d0947a28fa5e6b427bda717368a05471fbadc96f1f73f8a31fe4ade8131e"
 
-  url "https://github.com/yan-vikng-dev/AutoQuit/releases/download/v#{version}/AutoQuit-v#{version}.dmg"
+  url "https://github.com/vikng-dev/AutoQuit/releases/download/v#{version}/AutoQuit-v#{version}.dmg"
   name "AutoQuit"
   desc "Menu bar app that closes apps after their last window is gone"
-  homepage "https://github.com/yan-vikng-dev/AutoQuit"
+  homepage "https://github.com/vikng-dev/AutoQuit"
 
   livecheck do
     url :url

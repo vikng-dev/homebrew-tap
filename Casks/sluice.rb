@@ -14,8 +14,8 @@ cask "sluice" do
 
   # launchd keeps Sluice running, so it is told to let go before the app is swapped,
   # and the new app is opened to hand itself back.
-  postflight do
-    system_command "/usr/bin/open", args: ["#{appdir}/Sluice.app"]
+  postflight_steps do
+    run "/usr/bin/open", args: ["{{appdir}}/Sluice.app"]
   end
 
   uninstall launchctl: "dev.vikng.sluice.relay",

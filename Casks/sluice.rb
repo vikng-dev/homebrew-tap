@@ -12,16 +12,8 @@ cask "sluice" do
   app "Sluice.app"
   binary "#{appdir}/Sluice.app/Contents/MacOS/Sluice", target: "sluice"
 
-  # launchd keeps Sluice running, so it is told to let go before the app is swapped,
-  # and the new app is opened to hand itself back. Not `postflight_steps`: its steps run
-  # sandboxed, where `open` cannot reach LaunchServices (-10810) and the upgrade fails.
-  postflight do
-    system_command "/usr/bin/open", args: ["#{appdir}/Sluice.app"]
-  end
-
-  uninstall launchctl: "dev.vikng.sluice.relay",
-            quit:      "dev.vikng.sluice"
-
+  # Nothing here stops or starts Sluice. A running copy follows its own app: replaced,
+  # it restarts into the new one; removed, it quits. Open it once after the first install.
   zap trash: [
     "~/.config/sluice",
     "~/Library/Application Support/Sluice",

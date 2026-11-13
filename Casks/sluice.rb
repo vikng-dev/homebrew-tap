@@ -1,6 +1,6 @@
 cask "sluice" do
-  version "0.7.0"
-  sha256 "265e1b3120c5398b079d26b35db5936c92d09bfbc2b8cb9c397b0e54e835bbac"
+  version "0.8.0"
+  sha256 "8d067b770b14a73d3b933b0c0aafc87266165c568d1501ede5d078ac1dc46ebc"
 
   url "https://github.com/vikng-dev/sluice/releases/download/v#{version}/Sluice-v#{version}-macos.zip"
   name "Sluice"
